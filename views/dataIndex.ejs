@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jobCrawler</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">jobCrawler</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">主页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+
+</nav>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>公司</th>
+            <th>职位</th>
+            <th>薪资范围</th>
+            <th>工作地点</th>
+            <th>发布时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(var i=0;i<data.length;i++){ %>
+        <tr>
+            <th scope="row"><%= i %></th>
+            <td><%= data[i]["公司"]%></td>
+            <td><%= data[i]["职位"]%></td>
+            <td><%= data[i]["薪资范围"]%></td>
+            <td><%= data[i]["工作地点"]%></td>
+            <td><%= data[i]["发布时间"]%></td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

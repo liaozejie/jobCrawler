@@ -5,5 +5,6 @@ var router = require("./controller/router.js");
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
 app.get("/",router.getIndex);
+app.get("/backIndex",router.getBackIndex);
 
 app.listen(3000);

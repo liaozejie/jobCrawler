@@ -31,31 +31,22 @@
     </div>
 
 </nav>
-<div class="container">
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>公司</th>
-            <th>职位</th>
-            <th>薪资范围</th>
-            <th>工作地点</th>
-            <th>发布时间</th>
-        </tr>
-        </thead>
-        <tbody>
+<div class="container-fluid">
+    <ul class="job">
         <% for(var i=0;i<data.length;i++){ %>
-        <tr>
-            <th scope="row"><%= i %></th>
-            <td><%= data[i]["公司"]%></td>
-            <td><%= data[i]["职位"]%></td>
-            <td><%= data[i]["薪资范围"]%></td>
-            <td><%= data[i]["工作地点"]%></td>
-            <td><%= data[i]["发布时间"]%></td>
-        </tr>
+        <li class="job_li">
+            <div class="job_li_left">
+                <span>职位：<%= data[i]["职位"]%></span>
+                <span>公司：<%= data[i]["公司"]%></span>
+                <span>工作地点：<%= data[i]["工作地点"]%></span>
+            </div>
+            <div class="job_li_right">
+                <span>薪资范围：<%= data[i]["薪资范围"]%></span>
+                <span>发布时间：<%= data[i]["发布时间"]%></span>
+            </div>
+        </li>
         <% } %>
-        </tbody>
-    </table>
+    </ul>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

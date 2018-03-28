@@ -29,35 +29,10 @@
             </ul>
         </div><!--/.nav-collapse -->
     </div>
-
 </nav>
+
 <div class="container">
-    <table class="table table-bordered">
-        <caption>Optional table caption.</caption>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>职位</th>
-                <th>公司</th>
-                <th>工作地点</th>
-                <th>薪资范围</th>
-                <th>发布时间</th>
-            </tr>
-        </thead>
-        <tbody>
-        <% for(var i=0;i<data.length;i++){ %>
-            <tr>
-                <th scope="row"><%= i+1 %></th>
-                <td><%= data[i]["职位"]%></td>
-                <td><%= data[i]["公司"]%></td>
-                <td><%= data[i]["工作地点"]%></td>
-                <td><%= data[i]["薪资范围"]%></td>
-                <td><%= data[i]["发布时间"]%></td>
-            </tr>
-        <% } %>
-        </tbody>
-    </table>
-</div>
+</div><!-- /.container -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

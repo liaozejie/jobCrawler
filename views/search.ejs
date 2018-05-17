@@ -2,7 +2,6 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jobCrawler</title>
     <!-- Bootstrap core CSS -->
@@ -31,26 +30,28 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<ul class="job">
-    <% for(var i=0;i<data.length;i++){ %>
-    <li class="job_li" onclick="showInfo('<%= data[i]._id %>')">
-        <div class="job_li_left">
-            <div class="logo">
-                <div class="logo_img"></div>
-            </div>
-            <div class="info_left">
-                <span><%= data[i]["职位"]%></span>
-                <span><%= data[i]["公司"]%></span>
-                <span><%= data[i]["工作地点"]%></span>
-            </div>
+<div class="container">
+    <div class="starter-template">
+        <div class="search">
+            <span class="glyphicon glyphicon-search search-span" aria-hidden="true"></span>
+            <input class="search-input" type="text" placeholder="请输入想要查找的职位" onkeypress="showSearchResultByKeyCode(event)"/>
         </div>
-        <div class="job_li_right">
-            <span><%= data[i]["薪资范围"]%></span>
-            <span><%= data[i]["发布时间"]%></span>
+    </div>
+    <% if(historyRecord.length === 0){ %>
+        <p>暂无历史搜索记录</p>
+    <% } else{ %>
+        <div>
+            <p>您搜索过：</p>
+            <% for(var i=0;i<historyRecord.length;i++){ %>
+                <div class="record">
+                    <span onclick="showSearchResult(event)"><%= historyRecord[i]%></span>
+                </div>
+            <% } %>
+            <hr/>
+            <p><a class="btn btn-default" onClick="removeCookie()">清空历史搜索记录</a></p>
         </div>
-    </li>
     <% } %>
-</ul>
+</div><!-- /.container -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>

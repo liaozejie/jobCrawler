@@ -26,6 +26,15 @@ exports.find = function(url,dbName,collection,condition,callback){
        })
     });
 }
+//分页查询
+exports.findByPage = function(url,dbName,collection,condition,pageNum,pageSize,callback){
+    __Connect(url,function(err,client){
+        var db = client.db(dbName);
+        db.collection(collection).find(condition).skip((pageNum-1)*pageSize).limit(pageSize).toArray(function(err,docs){
+            callback(err,docs);
+        })
+    })
+}
 //更新数据
 exports.update = function(url,dbName,collection,condition,data,callback){
     __Connect(url,function(err,client){

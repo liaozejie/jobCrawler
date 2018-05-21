@@ -55,7 +55,7 @@ body {
 }
 .info_left{
     display: inline-flex;
-    width:80px;
+    /*width:80px;*/
     flex-direction: column;
     justify-content: space-around;
 }
@@ -82,9 +82,9 @@ body {
 }
 .job_li_left span,.job_li_right span{
     margin:0;
-    overflow: hidden;
+    /*overflow: hidden;
     text-overflow: ellipsis;
-    white-space:nowrap;
+    white-space:nowrap;*/
 }
 .job_li_left span:nth-child(1){
     color:black;
